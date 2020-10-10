@@ -7,8 +7,8 @@
 #include <TRootEmbeddedCanvas.h>
 #include <RQ_OBJECT.h>
 
-void calculateMuonPoints();
-void calculateElectronPoints();
+void CalculateMuonPoints();
+void CalculateElectronPoints();
 void AnimateMuon();
 void AnimateElectron();
 
@@ -232,8 +232,8 @@ Double_t *proton_px[8], *proton_py[8], *proton_pz[8];
 
 
 void eventDisplay() {
-  	calculateMuonPoints();
-  	calculateElectronPoints();
+  	CalculateMuonPoints();
+  	CalculateElectronPoints();
  
 	for (int j=0; j<nPROTON; j++) {
 
@@ -1047,7 +1047,7 @@ void MyMainFrame::Reset() {
 }
 
 
-void calculateMuonPoints() {
+void CalculateMuonPoints() {
 
   	fMu = new TFile("./delphes/zmumu.root");
 	tMu = (TTree*)fMu->Get("data");
@@ -1364,7 +1364,7 @@ void calculateMuonPoints() {
 }
 
 
-void calculateElectronPoints() {
+void CalculateElectronPoints() {
 
   	fE = new TFile("./delphes/ztoee.root");
 	tE = (TTree*)fE->Get("data");
